@@ -18,7 +18,7 @@ let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let running = false;
 // Starts game
-clash()
+clash();
 
 function clash() {
     squares.forEach(cell => cell.addEventListener("click", squareClick));

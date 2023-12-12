@@ -56,18 +56,23 @@ function winCheck() {
         const squareA = options[condition[0]];
         const squareB = options[condition[1]];
         const squareC = options[condition[2]];
+        // If there are spaces will continue along the code
         if (squareA == "" || squareB == "" || squareC == "") {
             continue;
         }
+        // If the three squares match, you win
         if (squareA == squareB && squareB == squareC) {
             winRound = true;
             break;
         }
     }
     if (winRound) {
+        // announces who won
         currentTurn.textContent = `${currentPlayer} wins!`;
+        //stops the game by making running false
         running = false;
         scoreboard()
+        // To establish a message if the game ends in a draw with all spaces filled and no matches
     } else if (!options.includes("")) {
         currentTurn.textContent = `Draw!`;
         running = false;
@@ -75,4 +80,11 @@ function winCheck() {
         alternate()
     }
 }   
-
+// resets all elements and attributes to base settings
+function restartGame() {
+    currentPlayer = "X"
+    options = ["", "", "", "", "", "", "", "", ""]
+    currentTurn.textContent = `${currentPlayer}'s turn`;
+    squares.forEach(cell => cell.textContent = "");
+    running = true;
+}

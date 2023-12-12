@@ -71,7 +71,7 @@ function winCheck() {
         currentTurn.textContent = `${currentPlayer} wins!`;
         //stops the game by making running false
         running = false;
-        scoreboard()
+        scoreBoard()
         // To establish a message if the game ends in a draw with all spaces filled and no matches
     } else if (!options.includes("")) {
         currentTurn.textContent = `Draw!`;
@@ -87,4 +87,16 @@ function restartGame() {
     currentTurn.textContent = `${currentPlayer}'s turn`;
     squares.forEach(cell => cell.textContent = "");
     running = true;
+}
+
+function scoreBoard() {
+    if (winCheck) {
+        if (currentPlayer = "X") {
+            xScore.textContent = + 1;
+        } else if (currentPlayer = "O") {
+            oScore.textContent = + 1;
+        } else {
+            return;
+        }
+    }
 }

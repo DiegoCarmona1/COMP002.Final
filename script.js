@@ -43,3 +43,10 @@ function updateSquare(cell, index) {
     //Marks teh square cells with X's or O's
     cell.textContent = currentPlayer
 }
+function alternate() {
+    currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    currentTurn.textContent = `${currentPlayer}'s turn`;
+}
+function winCheck() {
+    
+}

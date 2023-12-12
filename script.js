@@ -1,6 +1,6 @@
 const squares = document.querySelectorAll(".game-square");
 const currentTurn = document.querySelector("#turn");
-const restart = document.querySelector("#button--play-again");
+const restart = document.querySelector("#button-play-again");
 const xScore = document.querySelector("#scoreboard-x");
 const oScore = document.querySelector("#scoreboard--o");
 const winCond = [

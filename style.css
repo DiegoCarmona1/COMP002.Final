@@ -56,8 +56,8 @@ h2 {
 
 #turn {
 	border: 2px solid black;
+	padding: 3px;
 	color: red;
-	background-color: aqua;
 }
 
 .game-square {

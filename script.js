@@ -17,4 +17,29 @@ const winCond = [
 let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let running = false;
+// Starts game
+clash()
 
+function clash() {
+    squares.forEach(cell => cell.addEventListener("click", squareClick));
+    restart.addEventListener("click", restartGame);
+    currentTurn.textContent = `${currentPlayer}'s turn`;
+    running = true;
+}
+// function to react when a square on the page is clicked on
+function squareClick() {
+    const squareIndex = this.getAttribute("cellIndex");
+    // if the page doesn't run or if there are empty squares, nothing happens
+    if (options[squareIndex] != "" || !running) {
+        return;
+    }
+    // two follow up functions
+    updateSquare(this, squareIndex);
+    winCheck();
+}
+
+function updateSquare(cell, index) {
+    options[index] = currentPlayer;
+    //Marks teh square cells with X's or O's
+    cell.textContent = currentPlayer
+}

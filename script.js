@@ -48,5 +48,31 @@ function alternate() {
     currentTurn.textContent = `${currentPlayer}'s turn`;
 }
 function winCheck() {
-    
-}
+    // Will change later in the function dependent on if a player won or not
+    let winRound = false;
+    for (let i = 0; i < winCond.length; i++) {
+        // constants for teh indexes within the arrays for the successful answers\
+        const condition = winCond [i];
+        const squareA = options[condition[0]];
+        const squareB = options[condition[1]];
+        const squareC = options[condition[2]];
+        if (squareA == "" || squareB == "" || squareC == "") {
+            continue;
+        }
+        if (squareA == squareB && squareB == squareC) {
+            winRound = true;
+            break;
+        }
+    }
+    if (winRound) {
+        currentTurn.textContent = `${currentPlayer} wins!`;
+        running = false;
+        scoreboard()
+    } else if (!options.includes("")) {
+        currentTurn.textContent = `Draw!`;
+        running = false;
+    } else {
+        alternate()
+    }
+}   
+
